@@ -1,0 +1,55 @@
+Dungeon Game
+
+Dungeon Generation:
+-started project 1-19-16
+-generates rooms randomly 1-23-16
+-creates paths from each room 1-23-16
+-generates dungeon 1-23-16
+-dungeon includes boarder 1-23-16
+
+Dungeon Save/Load:
+-can load other dungeons from argument --load in command line 1-31-16
+-can save your dungeons from argument --save in command line 2-2-16
+-can save and load your dungeon from arguments --load --save or --save --load 2-2-16
+-code now includes double arrays of dungeon hardness and dungeon terrain 2-2-16
+
+Path Finding
+-generates dungeon with avatar placed in the center of the first room 2-7-16
+-generates a map that gives the shortest path for the monsters to the avatar 2-13-16
+-generates a map that gives the shortest path for monsters that can dig to the avatar 2-14-16
+
+Player Character and Monsters
+-generates monsters and a PC 2-20-16
+-monsters are scattered randomly in all of the rooms except the room that the PC occupies 2-20-16
+-prints each turn of the game with the monsters and PC displayed on the dungeon map 2-20-16
+-monsters have a 50% chance of having the following abilities 2-22-16
+	o Intelligence
+	o Telepathy
+	o Tunneling
+	o Erratic Behavior
+-turns are based upon the randomized speeds of the monsters 2-20-16
+	- determined via priority queue 
+	- each character moves every (100/speed) turns
+-game ends when monster occupies the same position as the PC and moves to that position second 2-22-16
+-if two monsters occupy the same position, the one who arrives second kills the other 2-23-16
+
+User Interface with Ncurses
+-player can now control the PC 3-3-16
+-commands include:
+	7 or y: Attempt to move PC one cell to the upper left.
+	8 or k: Attempt to move PC one cell up.
+	9 or u: Attempt to move PC one cell to the upper right.
+	6 or l: Attempt to move PC one cell to the right.
+	3 or n: Attempt to move PC one cell to the lower right.
+	2 or j: Attempt to move PC one cell down.
+	1 or b: Attempt to move PC one cell to the lower left.
+	4 or h: Attempt to move PC one cell to the left.
+	>: Attempt to go down stairs.
+	<: Attempt to go up stairs.
+	space: Rest for a turn.
+	m: Display a list of monsters in the dungeon and their position relative to the PC.
+	up arrow: Scrolls up through the monster list.
+	down arrow: Scrolls down through the monster list.
+	escape: exit monster list.
+	S: quit the game.
+-when stepping on the staircase, the PC will be randomly placed in a newly generated dungeon 3-5-16
